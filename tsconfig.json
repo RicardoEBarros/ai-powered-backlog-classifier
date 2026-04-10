@@ -5,7 +5,11 @@
     },
     "files": [],
     "references": [
-        { "path": "./backend" },
-        { "path": "./frontend" }
+        {
+            "path": "./backend"
+        },
+        {
+            "path": "./frontend"
+        }
     ]
 }
