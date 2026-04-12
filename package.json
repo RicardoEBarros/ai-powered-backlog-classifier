@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare:msg-linter": "git-commit-msg-linter install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +13,7 @@
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {
     "@types/node": "^25.6.0",
+    "git-commit-msg-linter": "^5.0.8",
     "prettier": "^3.8.2",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2"
