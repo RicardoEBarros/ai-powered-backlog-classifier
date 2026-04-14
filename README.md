@@ -6,7 +6,7 @@
 
 ---
 
-## 💻 Sobre o projeto
+## 💻 About the project
 
 This project creates classifiers for the Product Backlog to determine priorities based on a list of predefined parameters.
 
