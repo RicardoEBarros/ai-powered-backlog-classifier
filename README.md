@@ -1,2 +1,13 @@
-# ai-powered-backlog-classifier
-A system that offers intelligent classifiers to determine the priority level of new backlog items.
+[![Minhas Tecnologias](https://skillicons.dev/icons?i=nodejs,react,jest,postgres,docker,cypress,grafana,tensorflow,sass,next)](https://skillicons.dev)
+
+# AI-powered Backlog Classifier
+
+> A system that offers intelligent classifiers to determine the priority level of new backlog items.
+
+---
+
+## 💻 Sobre o projeto
+
+This project creates classifiers for the Product Backlog to determine priorities based on a list of predefined parameters.
+
+
