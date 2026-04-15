@@ -1,13 +1,9 @@
 {
-  "name": "@ai-powered-backlog-classifier/backend",
+  "name": "@ai-powered-backlog-classifier/frontend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
-  "directories": {
-    "doc": "docs",
-    "test": "test"
-  },
   "scripts": {
     "test": "NODE_OPTIONS='--experimental-vm-modules' npx jest --colors --silent --noStackTrace --passWithNoTests --no-cache --runInBand",
     "test:unit": "npm test -- --watchAll .spec.ts",
@@ -16,10 +12,12 @@
     "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
-  "author": "Ricardo",
+  "author": "",
   "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
   "devDependencies": {
     "@jest/globals": "^30.3.0",
-    "@types/jest": "^30.0.0"
+    "@types/jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.3.0"
   }
 }

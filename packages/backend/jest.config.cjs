@@ -7,9 +7,9 @@ module.exports = {
     extensionsToTreatAsEsm: ['.ts'],
     rootDir: '.',
     testMatch: [
-        '<rootDir>/test/**/*.spec.ts',
-        '<rootDir>/test/**/*.test.ts',
-        '<rootDir>/test/**/*.e2e.ts'
+        '<rootDir>/tests/**/*.spec.ts',
+        '<rootDir>/tests/**/*.test.ts',
+        '<rootDir>/tests/**/*.e2e.ts'
     ],
     transform: {
         '^.+\\.ts$': [
@@ -25,5 +25,10 @@ module.exports = {
     watchPlugins: [
         'jest-watch-typeahead/filename',
         'jest-watch-typeahead/testname'
-    ]
+    ],
+    testPathIgnorePatterns: [
+        '<rootDir>/node_modules/',
+        '<rootDir>/tests/e2e/cypress'
+    ],
+
 }

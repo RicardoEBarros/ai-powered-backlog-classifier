@@ -4,13 +4,15 @@ module.exports = {
     displayName: 'frontend',
     testEnvironment: 'jsdom',
     rootDir: '.',
+    preset: 'ts-jest/presets/default-esm',
+    extensionsToTreatAsEsm: ['.ts'],
     testMatch: [
-        '<rootDir>/test/**/*.spec.ts',
-        '<rootDir>/test/**/*.test.ts',
-        '<rootDir>/test/**/*.e2e.ts'
+        '<rootDir>/tests/**/*.spec.ts',
+        '<rootDir>/tests/**/*.test.ts',
+        '<rootDir>/tests/**/*.e2e.ts'
     ],
     transform: {
-        '^.+\\.tsx?$': [
+        '.+\\.(ts|tsx)$': [
             'ts-jest',
             {
                 useESM: true,
@@ -18,6 +20,15 @@ module.exports = {
         ]
     },
     moduleNameMapper: {
+        '@/tests/(.*)': '<rootDir>/tests/$1',
         '^(\\.{1,2}/.*)\\.js$': '$1'
-    }
+    },
+    watchPlugins: [
+        'jest-watch-typeahead/filename',
+        'jest-watch-typeahead/testname'
+    ],
+    testPathIgnorePatterns: [
+        '<rootDir>/node_modules/',
+        '<rootDir>/tests/e2e/cypress'
+    ],
 }
