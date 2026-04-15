@@ -6,13 +6,7 @@
     "files": [],
     "references": [
         {
-            "path": "./backend"
-        },
-        {
-            "path": "./frontend"
-        },
-        {
-            "path": "./packages/common"
+            "path": "./packages/backend"
         }
     ]
 }

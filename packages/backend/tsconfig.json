@@ -1,14 +1,18 @@
 {
-    "extends": "../tsconfig.base.json",
+    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
         "declaration": true,
         "declarationMap": true,
         "paths": {
             "@/*": [
-                "src/*"
+                "./src/*"
             ]
-        }
+        },
+        "types": [
+            "jest",
+            "node"
+        ]
     },
     "include": [
         "src"

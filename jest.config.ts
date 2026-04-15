@@ -1,19 +1,18 @@
 import type { Config } from 'jest'
 
 const config: Config = {
-    verbose: true,
     collectCoverage: true,
     coverageDirectory: 'coverage',
     coverageReporters: ['text', 'lcov', 'clover'],
     projects: [
-        '<rootDir>/backend/*/jest.config.ts',
-        '<rootDir>/frontend/*/jest.config.ts'
+        'packages/backend/jest.config.ts',
+        'packages/frontend/jest.config.ts'
     ],
     collectCoverageFrom: [
-        '<rootDir>/**/src/*.{ts,tsx,js,jsx}',
-        '!<rootDir>/**/*.d.ts',
-        '!<rootDir>/**/node_modules/**',
-        '!<rootDir>/**/dist/**'
+        'packages/**/src/**/*.{ts,tsx,js,jsx}',
+        '!**/*.d.ts',
+        '!**/node_modules/**',
+        '!**/dist/**'
     ]
 }
 

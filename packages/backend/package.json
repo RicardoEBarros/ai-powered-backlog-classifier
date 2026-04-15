@@ -1,0 +1,24 @@
+{
+  "name": "@ai-powered-backlog-classifier/backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "NODE_OPTIONS='--experimental-vm-modules' npx jest --silent --noStackTrace --passWithNoTests --no-cache --runInBand",
+    "test:unit": "npm test -- --watchAll .spec.ts",
+    "test:integration": "npm test -- --watchAll .test.ts",
+    "test:e2e": "npm test -- --watchAll .e2e.ts"
+  },
+  "keywords": [],
+  "author": "Ricardo",
+  "license": "ISC",
+  "devDependencies": {
+    "@jest/globals": "^30.3.0",
+    "@types/jest": "^30.0.0"
+  }
+}

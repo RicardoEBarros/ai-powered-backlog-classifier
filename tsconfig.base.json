@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
         "outDir": "dist",
-        "baseUrl": ".",
         "rootDir": "src",
         "target": "es2022",
-        "module": "esnext",
-        "moduleResolution": "node",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
+        "isolatedModules": true,
         "forceConsistentCasingInFileNames": true,
         "resolveJsonModule": true,
         "strict": true,
@@ -16,6 +16,10 @@
         "types": [
             "node"
         ]
+    },
+    "ts-node": {
+        "esm": true,
+        "experimentalSpecifierResolution": "node"
     },
     "exclude": [
         "node_modules",

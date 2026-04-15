@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "prepare:msg-linter": "git-commit-msg-linter install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "pnpm -r --workspace-root=false run test",
+    "test:unit": "pnpm -r --workspace-root=false run test:unit",
+    "test:integration": "pnpm -r --workspace-root=false run test:integration",
+    "test:e2e": "pnpm -r --workspace-root=false run test:e2e"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +22,10 @@
     "git-commit-msg-linter": "^5.0.8",
     "globals": "^17.5.0",
     "jest": "^30.3.0",
+    "jest-watch-typeahead": "^3.0.1",
     "jiti": "^2.6.1",
     "prettier": "^3.8.2",
+    "ts-jest": "^29.4.9",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.58.2"
