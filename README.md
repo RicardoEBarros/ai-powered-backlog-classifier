@@ -1,4 +1,4 @@
-[![Minhas Tecnologias](https://skillicons.dev/icons?i=nodejs,react,typescript,jest,postgres,docker,cypress,grafana,tensorflow,sass,next,figma)](https://skillicons.dev)
+[![Minhas Tecnologias](https://skillicons.dev/icons?i=nodejs,react,typescript,jest,postgres,docker,cypress,grafana,tensorflow,sass,next,figma,rabbitmq,redis)](https://skillicons.dev)
 
 # AI-powered Backlog Classifier
 
