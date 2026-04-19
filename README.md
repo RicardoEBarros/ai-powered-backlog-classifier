@@ -1,3 +1,5 @@
+[![Static Analysis](https://github.com/RicardoEBarros/ai-powered-backlog-classifier/actions/workflows/static-analysis.yml/badge.svg?branch=main)](https://github.com/RicardoEBarros/ai-powered-backlog-classifier/actions/workflows/static-analysis.yml)
+
 [![Minhas Tecnologias](https://skillicons.dev/icons?i=nodejs,react,typescript,jest,postgres,docker,cypress,grafana,tensorflow,sass,next,figma,rabbitmq,redis,kubernetes)](https://skillicons.dev)
 
 # AI-powered Backlog Classifier
