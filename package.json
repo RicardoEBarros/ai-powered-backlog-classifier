@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prettier:format": "pnpm -r --workspace-root=false run prettier:format",
     "prepare:msg-linter": "git-commit-msg-linter install",
     "test": "pnpm -r --workspace-root=false run test",
     "test:unit": "pnpm -r --workspace-root=false run test:unit",
@@ -16,6 +17,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "v22.22.1"
+  },
   "packageManager": "pnpm@10.33.0",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
