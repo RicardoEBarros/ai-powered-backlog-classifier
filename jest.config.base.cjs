@@ -2,6 +2,8 @@
 
 module.exports = {
     rootDir: '.',
+    preset: 'ts-jest/presets/default-esm',
+    extensionsToTreatAsEsm: ['.ts'],
     testMatch: [
         '<rootDir>/tests/**/*.spec.ts',
         '<rootDir>/tests/**/*.test.ts',

@@ -4,7 +4,5 @@ const baseConfig = require('../../jest.config.base.cjs');
 module.exports = {
     ...baseConfig,
     displayName: 'backend',
-    testEnvironment: 'node',
-    preset: 'ts-jest/presets/default-esm',
-    extensionsToTreatAsEsm: ['.ts']
+    testEnvironment: 'node'
 }

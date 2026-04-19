@@ -1,0 +1,20 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+        "declaration": true,
+        "declarationMap": true,
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        },
+        "types": [
+            "jest",
+            "node"
+        ]
+    },
+    "include": [
+        "src"
+    ]
+}
