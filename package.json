@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint . --cache",
     "prettier:format": "prettier --write \"packages/**/{src,tests}/**\" --no-error-on-unmatched-pattern",
     "prepare:msg-linter": "git-commit-msg-linter install",
     "test": "pnpm -r --workspace-root=false run test",
