@@ -9,6 +9,7 @@
     "test": "test"
   },
   "scripts": {
+    "prettier:format": "prettier --write \"{src,tests}/**\" --ignore-path ../../.prettierignore --no-error-on-unmatched-pattern",
     "test": "NODE_OPTIONS='--experimental-vm-modules' npx jest --colors --silent --noStackTrace --passWithNoTests --no-cache --runInBand",
     "test:unit": "npm test -- --watchAll .spec.ts",
     "test:integration": "npm test -- --watchAll .test.ts",
