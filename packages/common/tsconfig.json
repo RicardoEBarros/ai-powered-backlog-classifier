@@ -8,6 +8,14 @@
         "types": [
             "jest",
             "node"
-        ]
+        ],
+        "paths": {
+            "@/src/*": [
+                "./src/*"
+            ],
+            "@/tests/*": [
+                "./tests/*"
+            ]
+        },
     }
 }
