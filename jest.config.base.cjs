@@ -1,9 +1,12 @@
 /** @types {import('jest').Config} */
 
 module.exports = {
-    rootDir: '.',
     preset: 'ts-jest/presets/default-esm',
     extensionsToTreatAsEsm: ['.ts'],
+    collectCoverageFrom: [
+        '<rootDir>/src/**/*.ts',
+        '!**/*.d.ts'
+    ],
     testMatch: [
         '<rootDir>/tests/**/*.spec.ts',
         '<rootDir>/tests/**/*.test.ts',
@@ -17,17 +20,16 @@ module.exports = {
             }
         ]
     },
-    moduleNameMapper: {
-        '@/tests/(.*)': '<rootDir>/tests/$1',
-        '^(\\.{1,2}/.*)\\.js$': '$1'
-    },
     watchPlugins: [
         'jest-watch-typeahead/filename',
         'jest-watch-typeahead/testname'
     ],
     testPathIgnorePatterns: [
-        '<rootDir>/node_modules/',
-        '<rootDir>/tests/e2e/cypress'
+        '<rootDir>/node_modules/'
     ],
-
+    moduleNameMapper: {
+        '^@/src/(.*)\\.js$': '<rootDir>/src/$1',
+        '^@/tests/(.*)\\.js$': '<rootDir>/tests/$1',
+        '^(\\.{1,2}/.*)\\.js$': '$1'
+    },
 }

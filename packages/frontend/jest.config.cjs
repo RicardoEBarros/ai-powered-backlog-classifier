@@ -4,5 +4,9 @@ const baseConfig = require('../../jest.config.base.cjs');
 module.exports = {
     ...baseConfig,
     displayName: 'frontend',
-    testEnvironment: 'jsdom'
+    testEnvironment: 'jsdom',
+    moduleNameMapper: {
+        ...baseConfig.moduleNameMapper,
+        "@/(.*)": "<rootDir>/src/$1"
+    }
 }
