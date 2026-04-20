@@ -1,10 +1,9 @@
 import { describe, it, jest, expect, afterEach } from '@jest/globals'
-import { createRandomObject } from '@/tests/utils/mocks/random-values.js'
 
 // Mock Pino
 jest.unstable_mockModule('pino', () => ({ default: jest.fn() }))
 const { default: pino } = await import('pino')
-const { PinoAdapter } = await import('../../../src/infra/adapters/pino-adapter.js')
+const { makePinoAdapter } = await import('./mocks/pino-adapter-factory.js');
 
 describe('PinoAdapter Suite', () => {
 
@@ -13,9 +12,8 @@ describe('PinoAdapter Suite', () => {
     })
 
     it('Should confirm if logger parameter was called with correct arguments', () => {
-        const options = createRandomObject();
-        const loggerAdapter = new PinoAdapter()
-        loggerAdapter.createLogger(options)
+        const { options, sut } = makePinoAdapter()
+        sut.createLogger(options)
         expect(pino).toHaveBeenCalledTimes(1)
         expect(pino).toHaveBeenCalledWith(options)
     })
