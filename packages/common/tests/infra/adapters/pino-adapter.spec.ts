@@ -52,7 +52,18 @@ describe('PinoAdapter Suite', () => {
         )
     })
 
-    it.todo('Should returns target property with correct value')
+    it('Should calls pino with correct level property value', () => {
+        const level = faker.word.noun()
+        const { options, sut } = makePinoAdapter()
+        sut.createLogger({ ...options, level })
+        expect(pino).toHaveBeenCalledWith(
+            expect.objectContaining({
+                ...options,
+                level
+            })
+        )
+    })
+
     it.todo('Should returns colorize property with correct value')
     it.todo('Should returns translateTime property with correct value')
     it.todo('Should returns correct level property if LOG_LEVEL exists')
