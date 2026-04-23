@@ -1,16 +1,17 @@
+import { faker } from '@faker-js/faker';
 import { describe, it, jest, expect, afterEach, beforeEach } from '@jest/globals'
 
 // Mock Pino
 jest.unstable_mockModule('pino', () => ({ default: jest.fn() }))
 const { default: pino } = await import('pino')
-const { makePinoAdapter } = await import('./mocks/pino-adapter-factory.js');
+const { makePinoAdapter } = await import('./mocks/pino-adapter-factory.js')
 
 describe('PinoAdapter Suite', () => {
 
-    let originalEnv: NodeJS.ProcessEnv;
+    let originalEnv: NodeJS.ProcessEnv
 
     beforeEach(() => {
-        originalEnv = process.env;
+        originalEnv = process.env
     })
 
     afterEach(() => {
@@ -42,7 +43,15 @@ describe('PinoAdapter Suite', () => {
         )
     })
 
-    it.todo('Should returns transport property with undefined if NODE_ENV is not equals development')
+    it('Should calls pino with an undefined transport property value if NODE_ENV is not equals development', () => {
+        process.env.NODE_ENV = process.env.NODE_ENV + faker.word.noun() // to force non-existent NODE_ENV value
+        const { options, sut } = makePinoAdapter()
+        sut.createLogger(options)
+        expect(pino).toHaveBeenCalledWith(
+            expect.objectContaining({ transport: undefined })
+        )
+    })
+
     it.todo('Should returns target property with correct value')
     it.todo('Should returns colorize property with correct value')
     it.todo('Should returns translateTime property with correct value')
