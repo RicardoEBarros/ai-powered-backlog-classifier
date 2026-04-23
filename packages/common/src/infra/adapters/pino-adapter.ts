@@ -7,7 +7,23 @@ export class PinoAdapter implements LoggerProtocol<Logger, LoggerOptions> {
     constructor() { }
 
     createLogger(options: LoggerOptions): Logger {
-        return pino(options)
+        const transport = process.env.NODE_ENV === 'development'
+            ?
+            {
+                target: 'pino-pretty',
+                options: {
+                    colorize: true,
+                    translateTime: 'SYS:standard'
+                }
+            }
+            : undefined;
+
+        return pino(
+            {
+                ...options,
+                transport
+            }
+        )
     }
 
 }
