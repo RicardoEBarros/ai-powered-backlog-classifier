@@ -1,4 +1,4 @@
-import { describe, it, jest, expect, afterEach } from '@jest/globals'
+import { describe, it, jest, expect, afterEach, beforeEach } from '@jest/globals'
 
 // Mock Pino
 jest.unstable_mockModule('pino', () => ({ default: jest.fn() }))
@@ -7,8 +7,15 @@ const { makePinoAdapter } = await import('./mocks/pino-adapter-factory.js');
 
 describe('PinoAdapter Suite', () => {
 
+    let originalEnv: NodeJS.ProcessEnv;
+
+    beforeEach(() => {
+        originalEnv = process.env;
+    })
+
     afterEach(() => {
         jest.clearAllMocks()
+        process.env = originalEnv
     })
 
     it('Should confirm if logger parameter was called with correct arguments', () => {
@@ -18,7 +25,23 @@ describe('PinoAdapter Suite', () => {
         expect(pino).toHaveBeenCalledWith(options)
     })
 
-    it.todo('Should returns transport property with valid object if NODE_ENV equals development')
+    it('Should calls pino with valid transport property if NODE_ENV equals development', () => {
+        process.env.NODE_ENV = 'development'
+        const { options, sut } = makePinoAdapter()
+        sut.createLogger(options)
+        expect(pino).toHaveBeenCalledWith(
+            expect.objectContaining({
+                transport: {
+                    target: "pino-pretty",
+                    options: {
+                        colorize: true,
+                        translateTime: "SYS:standard"
+                    }
+                }
+            })
+        )
+    })
+
     it.todo('Should returns transport property with undefined if NODE_ENV is not equals development')
     it.todo('Should returns target property with correct value')
     it.todo('Should returns colorize property with correct value')
