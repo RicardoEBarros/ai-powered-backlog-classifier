@@ -64,9 +64,15 @@ describe('PinoAdapter Suite', () => {
         )
     })
 
-    it.todo('Should returns colorize property with correct value')
-    it.todo('Should returns translateTime property with correct value')
-    it.todo('Should returns correct level property if LOG_LEVEL exists')
-    it.todo('Should returns correct level property if LOG_LEVEL don\'t exists')
+    it('Should LOG_LEVEL property is defined if level is invalid', () => {
+        const level = faker.word.noun() // level fake
+        process.env.LOG_LEVEL = level
+        const { options, sut } = makePinoAdapter()
+        sut.createLogger({ ...options })
+        expect(pino).toHaveBeenCalledWith(
+            expect.objectContaining({ level })
+        )
+    })
+
 
 })
