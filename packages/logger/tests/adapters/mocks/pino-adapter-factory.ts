@@ -1,6 +1,6 @@
-import { PinoAdapter } from "@/src/infra/adapters/pino-adapter.js";
-import { LoggerProtocol } from "@/src/infra/protocols/logger/logger-protocol.js";
-import { createRandomObject } from "@/tests/utils/mocks/random-values.js";
+import { PinoAdapter } from "@/src/adapters/pino-adapter.js";
+import { LoggerProtocol } from "@/src/protocols/logger-protocol.js";
+import { createRandomObject } from "@/tests/mocks/random-values.js";
 import type { Logger, LoggerOptions } from "pino";
 
 interface SutTypes {

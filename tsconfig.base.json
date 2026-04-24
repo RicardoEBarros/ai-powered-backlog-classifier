@@ -15,6 +15,14 @@
         "types": [
             "node"
         ],
+        "paths": {
+            "@ai-powered-backlog-classifier/shared": [
+                "packages/shared/src/index.ts"
+            ]
+        },
+        "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+        "declaration": true,
+        "declarationMap": true,
     },
     "ts-node": {
         "esm": true,

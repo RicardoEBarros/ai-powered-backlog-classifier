@@ -57,7 +57,7 @@ importers:
         specifier: ^8.58.2
         version: 8.58.2(eslint@10.2.0(jiti@2.6.1))(typescript@6.0.2)
 
-  packages/backend:
+  packages/authentication-service:
     devDependencies:
       '@jest/globals':
         specifier: ^30.3.0
@@ -66,8 +66,23 @@ importers:
         specifier: ^30.0.0
         version: 30.0.0
 
-  packages/common:
+  packages/frontend:
+    devDependencies:
+      '@jest/globals':
+        specifier: ^30.3.0
+        version: 30.3.0
+      '@types/jest':
+        specifier: ^30.0.0
+        version: 30.0.0
+      jest-environment-jsdom:
+        specifier: ^30.3.0
+        version: 30.3.0
+
+  packages/logger:
     dependencies:
+      '@ai-powered-backlog-classifier/shared':
+        specifier: workspace:^
+        version: link:../shared
       pino:
         specifier: ^10.3.1
         version: 10.3.1
@@ -88,17 +103,7 @@ importers:
         specifier: ^30.0.0
         version: 30.0.0
 
-  packages/frontend:
-    devDependencies:
-      '@jest/globals':
-        specifier: ^30.3.0
-        version: 30.3.0
-      '@types/jest':
-        specifier: ^30.0.0
-        version: 30.0.0
-      jest-environment-jsdom:
-        specifier: ^30.3.0
-        version: 30.3.0
+  packages/shared: {}
 
 packages:
 

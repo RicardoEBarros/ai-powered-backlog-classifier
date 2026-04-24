@@ -1,3 +1,3 @@
 export interface LoggerProtocol<T, K> {
-    createLogger(options?: K): T
+    createLogger(options: K): T
 }

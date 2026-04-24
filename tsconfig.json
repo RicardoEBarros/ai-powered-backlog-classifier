@@ -6,13 +6,16 @@
     "files": [],
     "references": [
         {
-            "path": "./packages/backend"
+            "path": "./packages/authentication-service"
         },
         {
             "path": "./packages/frontend"
         },
         {
-            "path": "./packages/common"
+            "path": "./packages/logger"
+        },
+        {
+            "path": "./packages/shared"
         }
     ]
 }

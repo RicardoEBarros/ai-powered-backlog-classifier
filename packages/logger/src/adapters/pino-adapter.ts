@@ -1,11 +1,11 @@
+import { LoggerProtocol } from "../infra/protocols/logger/logger-protocol.js";
+import { CreateLoggerOptions } from "../infra/types/logger/create-logger-options-type.js";
 import type { Logger, LoggerOptions, TransportTargetOptions } from "pino";
-import { LoggerProtocol } from "../protocols/logger/logger-protocol.js";
 import pino from 'pino';
-import { CreateLoggerOptions } from "../types/logger/create-logger-options-type.js";
 
-export class PinoAdapter implements LoggerProtocol<Logger, LoggerOptions> {
+export abstract class PinoAdapter implements LoggerProtocol<Logger, LoggerOptions> {
 
-    constructor() { }
+    constructor(private readonly name: string) { }
 
     createLogger(options: CreateLoggerOptions): Logger {
         const { level, ...rest } = options
@@ -15,6 +15,7 @@ export class PinoAdapter implements LoggerProtocol<Logger, LoggerOptions> {
 
         return pino({
             ...options,
+            name: this.name,
             transport,
             level: validLevel,
             ...rest
