@@ -1,6 +1,6 @@
-import { PinoAdapter } from "@/src/adapters/pino-adapter.js";
 import { LoggerProtocol } from "@/src/protocols/logger-protocol.js";
 import { createRandomObject } from "@/tests/mocks/random-values.js";
+import { PinoAdapterMock } from "./pino-adapter-mock.js";
 import type { Logger, LoggerOptions } from "pino";
 
 interface SutTypes {
@@ -10,7 +10,7 @@ interface SutTypes {
 
 export const makePinoAdapter = (): SutTypes => {
     const options = createRandomObject();
-    const sut = new PinoAdapter()
+    const sut = new PinoAdapterMock()
     return {
         sut,
         options
