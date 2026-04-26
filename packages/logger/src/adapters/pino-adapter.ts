@@ -20,6 +20,10 @@ export class PinoAdapter implements LoggerProtocol<LoggerOptions, Logger> {
         return this.createLogger({ ...options, level: logLevelsOptions.warning })
     }
 
+    createInfoLog(options: LoggerOptions): Logger {
+        return this.createLogger({ ...options, level: logLevelsOptions.info })
+    }
+
     private createLogger(options: CreateLoggerOptions): Logger {
         const isDevelopmentEnv = process.env.NODE_ENV === 'development'
         const transport = isDevelopmentEnv ? this.getPrettyConfigs() : undefined;
