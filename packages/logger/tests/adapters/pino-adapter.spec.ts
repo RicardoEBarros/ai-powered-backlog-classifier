@@ -124,6 +124,23 @@ describe('PinoAdapter Suite', () => {
             )
         })
 
+        it('Should calls pino with valid transport property if NODE_ENV equals development', () => {
+            process.env.NODE_ENV = 'development'
+            const { options, sut } = makePinoAdapter()
+            sut.createWarningLog(options)
+            expect(pino).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    transport: {
+                        target: "pino-pretty",
+                        options: {
+                            colorize: true,
+                            translateTime: "SYS:standard"
+                        }
+                    }
+                })
+            )
+        })
+
     })
 
 
