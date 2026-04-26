@@ -8,7 +8,11 @@ export class PinoAdapter implements FaltaLogProtocol<LoggerOptions, Logger> {
     constructor(private readonly name: SystemWorkspaces) { }
 
     createFatalLog(options: LoggerOptions): Logger {
-        return this.createLogger({ ...options, name: this.name, level: logLevelsOptions.fatal })
+        return this.createLogger({ ...options, level: logLevelsOptions.fatal })
+    }
+
+    CreateErrorLog(options: LoggerOptions): Logger {
+        return this.createLogger({ ...options, level: logLevelsOptions.error })
     }
 
     private createLogger(options: CreateLoggerOptions): Logger {
@@ -17,7 +21,8 @@ export class PinoAdapter implements FaltaLogProtocol<LoggerOptions, Logger> {
 
         return pino({
             ...options,
-            transport
+            transport,
+            name: this.name
         })
     }
 
