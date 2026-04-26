@@ -109,5 +109,22 @@ describe('PinoAdapter Suite', () => {
 
     })
 
+    describe('CreateWarningLog', () => {
+
+        it('Should calls pino with with correct values', () => {
+            const { options, sut } = makePinoAdapter(systemWorkspace)
+            sut.createWarningLog(options)
+            expect(pino).toHaveBeenCalledTimes(1)
+            expect(pino).toHaveBeenCalledWith(
+                {
+                    ...options,
+                    name: systemWorkspace,
+                    level: logLevelsOptions.warning
+                }
+            )
+        })
+
+    })
+
 
 })
