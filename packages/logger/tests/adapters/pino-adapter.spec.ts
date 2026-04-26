@@ -141,6 +141,15 @@ describe('PinoAdapter Suite', () => {
             )
         })
 
+        it('Should calls pino with an undefined transport property value if NODE_ENV is not equals development', () => {
+            process.env.NODE_ENV = process.env.NODE_ENV + faker.word.noun() // to force non-existent NODE_ENV value
+            const { options, sut } = makePinoAdapter()
+            sut.createWarningLog(options)
+            expect(pino).toHaveBeenCalledWith(
+                expect.objectContaining({ transport: undefined })
+            )
+        })
+
     })
 
 
