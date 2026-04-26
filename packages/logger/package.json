@@ -2,7 +2,8 @@
   "name": "@ai-powered-backlog-classifier/logger",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "type": "module",
   "scripts": {
     "test": "NODE_OPTIONS='--experimental-vm-modules' npx jest --colors --silent --noStackTrace --passWithNoTests --no-cache --runInBand",

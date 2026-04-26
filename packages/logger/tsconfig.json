@@ -2,6 +2,9 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "rootDir": ".",
+        "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+        "declaration": true,
+        "declarationMap": true,
         "types": [
             "jest",
             "node"

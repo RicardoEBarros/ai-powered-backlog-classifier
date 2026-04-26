@@ -30,6 +30,7 @@ module.exports = {
     moduleNameMapper: {
         '^@/src/(.*)\\.js$': '<rootDir>/src/$1',
         '^@/tests/(.*)\\.js$': '<rootDir>/tests/$1',
-        '^(\\.{1,2}/.*)\\.js$': '$1'
+        '^(\\.{1,2}/.*)\\.js$': '$1',
+        '^@ai-powered-backlog-classifier/(.*)$': '<rootDir>/../$1',
     },
 }
