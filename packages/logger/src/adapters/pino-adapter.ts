@@ -1,9 +1,10 @@
-import { FaltaLogProtocol, logLevelsOptions, SystemWorkspaces } from "@ai-powered-backlog-classifier/shared";
+import { logLevelsOptions, SystemWorkspaces } from "@ai-powered-backlog-classifier/shared";
 import { CreateLoggerOptions } from "../types/create-logger-options.js";
+import { LoggerProtocol } from "@ai-powered-backlog-classifier/shared/src/protocols/logger-protocol.js";
 import type { Logger, LoggerOptions, TransportTargetOptions } from "pino";
 import pino from 'pino';
 
-export class PinoAdapter implements FaltaLogProtocol<LoggerOptions, Logger> {
+export class PinoAdapter implements LoggerProtocol<LoggerOptions, Logger> {
 
     constructor(private readonly name: SystemWorkspaces) { }
 
@@ -11,7 +12,7 @@ export class PinoAdapter implements FaltaLogProtocol<LoggerOptions, Logger> {
         return this.createLogger({ ...options, level: logLevelsOptions.fatal })
     }
 
-    CreateErrorLog(options: LoggerOptions): Logger {
+    createErrorLog(options: LoggerOptions): Logger {
         return this.createLogger({ ...options, level: logLevelsOptions.error })
     }
 
