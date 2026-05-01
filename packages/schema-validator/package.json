@@ -1,0 +1,28 @@
+{
+  "name": "@ai-powered-backlog-classifier/schema-validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "NODE_OPTIONS='--experimental-vm-modules' npx jest --colors --silent --noStackTrace --passWithNoTests --no-cache --runInBand",
+    "test:unit": "npm test -- --watchAll .spec.ts",
+    "test:integration": "npm test -- --watchAll .test.ts",
+    "test:e2e": "npm test -- --watchAll .e2e.ts",
+    "test:ci": "npm test -- --coverage",
+    "test:staged": "npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "dependencies": {
+    "i18next": "^26.0.8",
+    "zod-i18n-map": "^2.27.0"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.3.0",
+    "@types/jest": "^30.0.0"
+  }
+}
