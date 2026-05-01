@@ -10,6 +10,9 @@
         },
         {
             "path": "./packages/shared"
+        },
+        {
+            "path": "./packages/schema-validator"
         }
     ]
 }
