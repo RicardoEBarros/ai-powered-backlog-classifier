@@ -1,3 +1,3 @@
 export interface ConfigureLanguageProtocol {
-    configLanguage(): Promise<void>
+    configLanguage(): void
 }

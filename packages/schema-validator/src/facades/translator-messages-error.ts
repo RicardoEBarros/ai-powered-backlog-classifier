@@ -5,7 +5,7 @@ import * as z from 'zod'
 export class TranslatorMessagesError implements ConfigureLanguageProtocol {
     constructor(private readonly language: languages) { }
 
-    async configLanguage(): Promise<void> {
+    configLanguage(): void {
         z.config(z.locales[this.language]())
     }
 }

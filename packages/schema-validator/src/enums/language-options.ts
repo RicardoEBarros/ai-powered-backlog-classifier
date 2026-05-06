@@ -1,4 +1,4 @@
 export enum languageOptions {
-    'portugues' = 'pt',
-    'ingles' = 'es'
+    'portuguese' = 'pt',
+    'english' = 'es'
 }
